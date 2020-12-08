@@ -1,8 +1,8 @@
 {
-  "name": "bazel-lab",
+  "name": "jest-test-repro",
   "version": "1.0.0",
   "private": true,
-  "description": "Monorepo lab environment",
+  "description": "Jest issue reproduction laboratory",
   "license": "ISC",
   "dependencies": {
     "cli-color": "^2.0.0"
