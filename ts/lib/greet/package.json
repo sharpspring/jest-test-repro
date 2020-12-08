@@ -1,0 +1,7 @@
+{
+  "name": "@lib/greet",
+  "version": "0.0.0",
+  "private": true,
+  "main": "greet.js",
+  "typings": "greet.d.ts"
+}
