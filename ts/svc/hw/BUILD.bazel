@@ -1,5 +1,5 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
-load("@npm//@bazel/typescript:index.bzl", "ts_project", "ts_config")
+load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -18,9 +18,9 @@ ts_config(
 ts_project(
     tsconfig = ":tsconfig-hw",
     deps = [
+        "//ts/lib/greet",
         "@npm//@types/cli-color",
         "@npm//@types/node",
         "@npm//cli-color",
-        "//ts/lib/greet",
     ],
 )
