@@ -1,6 +1,6 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
 load("@npm//@bazel/typescript:index.bzl", "ts_config", "ts_project")
-load("@npm//jest-cli:index.bzl", "jest_test")
+load("//:jest.bzl", "jest_test")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -28,18 +28,7 @@ js_library(
 
 jest_test(
     name = "ts_greet_test",
-    args = [
-        "--no-cache",
-        "--no-watchman",
-        "--ci",
-        "--colors",
-        "--config",
-        "jest.config.js",
-    ],
-    data = [
-        ":greet",
-        ":package.json",
-        ":tsconfig-greet",
-        "//:jest.config.js",
-    ],
+    srcs = [":tsconfig"],
+    jest_config = "//:jest.config.js",
+    deps = [],
 )
